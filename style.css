@@ -1,0 +1,1049 @@
+/* ======================================= TABLE OF CONTENT ================================================
+
+1. Variables
+2. Fonts
+3. Global Rules And Classes
+4. Landing
+  4.1. Nav
+  4.2. Hero
+5. About
+  5.1. General Informations ( Who are we ? When? Why?...)
+  5.2. Important Dates
+6. Stats
+  6.1. Ranking
+  6.2. Trophy
+  6.3. Yearly Graduted Students
+  6.4. +30 Subjects
+7. Staff
+  7.1. Admins
+  7.2. Performing Students
+8. Activities
+9. Contact
+10. Footer
+
+======================================= TABLE OF CONTENT ================================================ */
+
+/* -------- 1. Variables -------- */
+
+:root {
+  --primary-clr: #1e3ea3;
+  --second-clr: #ffbb56;
+  --accent: #ea4c84;
+  --gradient-primary-clr: var(--faint-primary-clr), var(--faint-primary-clr);
+  --main-gradient: to bottom right, var(--second-clr), var(--accent);
+  --sticky-note-1: rgb(0, 195, 255);
+  --sticky-note-2: rgb(238, 255, 0);
+  --sticky-note-3: rgb(0, 255, 85);
+  --sticky-note-4: rgb(255, 49, 227);
+  --txt-clr: #444;
+  --grey-bg: #e3e3e3;
+  --faint-primary-clr: rgba(3, 16, 59, 0.5);
+  --xxl-font-sz: 4.25rem;
+  --xl-font-sz: 2.5rem;
+  --mid-font-sz: 2rem;
+  --small-font-sz: 0.75rem;
+  --section-block-margin: 3.25rem;
+  --transition-dur: 0.2s;
+  --book-cover-clr: var(--primary-clr);
+}
+
+@media (max-width: 855px) {
+  :root {
+    --xxl-font-sz: 2.5rem;
+    --xl-font-sz: 2rem;
+    --section-block-margin: 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  :root {
+    --xl-font-sz: 1.5rem;
+  }
+}
+/* -------- 1. Variables -------- */
+
+/* -------- 2. Fonts -------- */
+
+/* headings font */
+@font-face {
+  font-family: "momcake";
+  src: url("../fonts/momcake/MomcakeBold.otf");
+}
+
+/* regular font */
+@font-face {
+  font-family: "inter";
+  src: url("../fonts/inter/Inter-Light.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("../fonts/inter/Inter-Regular.ttf");
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("../fonts/inter/Inter-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("../fonts/inter/Inter-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("../fonts/inter/Inter-Black.ttf");
+  font-weight: 900;
+}
+
+/* -------- 2. Fonts -------- */
+
+/* -------- 3. Global Rules And Classes -------- */
+
+html {
+  font-family: "inter", Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "momcake", Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media (max-width: 450px) {
+  .container {
+    width: 80%;
+  }
+}
+
+section {
+  margin-block: var(--section-block-margin);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--primary-clr);
+  font-size: var(--xxl-font-sz);
+  position: relative;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  height: 2px;
+  background-color: var(--primary-clr);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::before {
+  width: 15%;
+  bottom: 0;
+}
+
+.section-title::after {
+  width: 10%;
+  bottom: -8px;
+}
+
+/* -------- 3. Global Rules And Classes -------- */
+
+/* -------- 4. Landing -------- */
+
+.landing {
+  min-height: 100vh;
+  background-image: linear-gradient(var(--gradient-primary-clr)),
+    url("../imgs/landing.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* 4.1. Nav */
+.landing nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+  height: 80px;
+}
+
+.landing nav h1 {
+  font-size: var(--xl-font-sz);
+  color: #fff;
+}
+
+.landing nav h1 span {
+  color: var(--second-clr);
+}
+
+.landing nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.landing nav ul a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 100;
+  transition: color var(--transition-dur);
+}
+
+.landing nav ul li:hover a {
+  color: var(--second-clr);
+}
+.landing nav .mobile-nav {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .landing nav {
+    position: relative;
+  }
+
+  .landing nav .mobile-nav {
+    display: block;
+    width: 48px;
+    padding: 10px;
+  }
+
+  .landing nav .mobile-nav span {
+    display: block;
+    background-color: #fff;
+    height: 2px;
+    width: 100%;
+    transition: transform var(--transition-dur), opacity var(--transition-dur);
+  }
+
+  .landing nav .mobile-nav:hover span:first-child {
+    transform: rotate(45deg) translate(1px, 14px);
+  }
+
+  .landing nav .mobile-nav:hover span:nth-child(2) {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  .landing nav .mobile-nav:hover span:last-child {
+    transform: rotate(-45deg) translate(1px, -13px);
+  }
+
+  .landing nav .mobile-nav span:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .landing nav ul {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    height: calc(100vh - 80px);
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0 0 0 / 0),
+      var(--primary-clr)
+    );
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+  }
+
+  .landing .mobile-nav:hover + ul {
+    display: flex;
+  }
+
+  .landing nav ul li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .landing nav ul li a {
+    font-size: 18px;
+  }
+}
+
+/* 4.2. Hero */
+.hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  line-height: 1.4;
+}
+
+.hero h2 span {
+  background-image: linear-gradient(var(--main-gradient));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 4.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 span {
+    font-size: 3rem;
+  }
+}
+
+/* -------- 4. Landing -------- */
+
+/* -------- 5. About -------- */
+
+/* 5.1. General Informations*/
+.about .sticky-notes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1%;
+}
+
+.about .sticky-notes .note {
+  width: calc(95% / 4);
+  padding: 10px;
+  position: relative;
+}
+
+.about .sticky-notes .note::before {
+  content: "";
+  display: block;
+  background-color: #000;
+  width: 10px;
+  height: 10px;
+  margin: 8px auto;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 0 rgb(3 16 59 / 86%);
+}
+.about .sticky-notes .note.blue {
+  background-color: var(--sticky-note-1);
+}
+
+.about .sticky-notes .note.yellow {
+  background-color: var(--sticky-note-2);
+}
+
+.about .sticky-notes .note.green {
+  background-color: var(--sticky-note-3);
+}
+
+.about .sticky-notes .note.pink {
+  background-color: var(--sticky-note-4);
+}
+
+.about .sticky-notes .note:nth-child(odd) {
+  transform: rotate(-8deg);
+}
+
+.about .sticky-notes .note:nth-child(even) {
+  transform: rotate(6deg);
+}
+
+.about .sticky-notes .note h3 {
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+}
+
+.about .sticky-notes .note p {
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+/* @media (min-width: 767px to max-width: 426px) {
+  .about .sticky-notes .note {
+    width: 50%;
+  }
+} */
+
+@media (max-width: 767px) {
+  .about .sticky-notes {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .about .sticky-notes .note {
+    width: 50%;
+    margin: 1rem auto;
+  }
+
+  .about .sticky-notes .note:nth-child(odd) {
+    transform: rotate(4deg);
+  }
+
+  .about .sticky-notes .note:nth-child(even) {
+    transform: rotate(-4deg);
+  }
+}
+
+@media (max-width: 424px) {
+  .about .sticky-notes .note {
+    width: 100%;
+  }
+}
+
+/* 5.2. Important Dates */
+.important-dates {
+  margin-top: 2.5rem;
+}
+
+.important-dates .container {
+  position: relative;
+}
+
+.important-dates .container > h3 {
+  font-size: var(--mid-font-sz);
+  color: var(--primary-clr);
+  text-align: center;
+}
+
+.book-cover {
+  background-color: var(--book-cover-clr);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.book-cover .page {
+  background-color: wheat;
+  padding: 10px;
+  box-shadow: inset 0 0 15px 0 rgba(0 0 0 / 0.5);
+  border-radius: 5px;
+}
+
+.book-cover .page h3 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.book-cover .page p {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.container .left-arrow,
+.container .right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--accent);
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 21px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.container i {
+  cursor: pointer;
+}
+
+.important-dates .container input {
+  position: absolute;
+}
+
+.container .left-arrow {
+  left: -10%;
+}
+
+.container .right-arrow {
+  right: -10%;
+}
+
+.important-dates .container input {
+  left: -100vw;
+}
+
+.container .book-2 {
+  display: none;
+}
+
+.container #flip-2:checked ~ .book-cover.book-2 {
+  display: flex;
+}
+
+.container #flip-2:checked ~ .book-cover.book-1 {
+  display: none;
+}
+
+.container #flip-2:checked ~ #flip-2 + label i {
+  display: flex;
+}
+
+.container #flip:checked ~ .book-cover.book-2 {
+  display: none;
+}
+
+.container #flip:checked ~ .book-cover.book-1 {
+  display: flex;
+}
+
+/* .container #flip-2:checked + label i {
+  display: none;
+} */
+
+/* -------- 5. About -------- */
+
+/* -------- 6. Stats -------- */
+
+/* 6.1. Ranking */
+h3.article-title {
+  text-align: center;
+  font-size: var(--mid-font-sz);
+  margin: 2rem 0;
+}
+
+.ranking .polls {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  gap: 1%;
+}
+
+.ranking .polls .ranking-poll {
+  background-color: var(--grey-bg);
+  width: calc(50% / 3);
+  margin-top: 1.25rem;
+  counter-increment: ranking;
+}
+
+.ranking .polls .ranking-poll.our-college {
+  background-image: linear-gradient(var(--main-gradient));
+}
+
+.ranking .polls .ranking-poll.our-college::before {
+  color: #fff;
+  font-size: calc(var(--mid-font-sz) + 1.5rem);
+}
+
+.ranking .polls .ranking-poll::before {
+  content: "#" counter(ranking);
+  font-family: "momcake", Arial, Helvetica, sans-serif;
+  font-size: var(--mid-font-sz);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ranking .polls .ranking-poll:last-child {
+  height: 200px;
+}
+
+.ranking .polls .ranking-poll:nth-child(2) {
+  height: 250px;
+}
+
+.ranking .polls .ranking-poll:first-child {
+  height: 300px;
+}
+
+@media (max-width: 767px) {
+  .ranking .polls .ranking-poll {
+    width: calc(90% / 3);
+  }
+}
+
+/* 6.2. Trophy */
+.trophy {
+  position: relative;
+  height: 400px;
+}
+
+.trophy-body {
+  background-color: gold;
+  border-radius: 0 0 92px 92px;
+  position: relative;
+  width: 30%;
+  margin: 0 auto;
+  padding: 25px;
+  box-shadow: inset 0 0 16px 0 rgb(255 255 255);
+  width: 250px;
+}
+
+.trophy-body h4,
+.trophy-body h6 {
+  color: var(--primary-clr);
+  text-align: center;
+}
+
+.trophy-body h4 {
+  font-size: var(--mid-font-sz);
+}
+
+.trophy-body h6 {
+  font-size: 1rem;
+}
+
+.trophy-body .trophy-stand-pod {
+  width: 4%;
+  height: 100%;
+  background-color: gold;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  box-shadow: inset 0 0 10px 0 rgb(255 255 255 / 0.71);
+}
+
+.trophy .trophy-base {
+  width: 48%;
+  height: 1rem;
+  background-color: rgb(63, 35, 2);
+  border-radius: 13px;
+  position: absolute;
+  bottom: -80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 6.3. Yearly Graduted Students */
+
+.graph {
+  padding: 12px;
+}
+
+.years {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.years .poll {
+  height: 250px;
+  width: 100%;
+  background-color: var(--grey-bg);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.years .col .year {
+  font-weight: 500;
+}
+
+.years .poll::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(var(--main-gradient));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.years .col:first-of-type .poll::before {
+  height: 16.67%;
+}
+
+.years .col:nth-of-type(2) .poll::before {
+  height: 40%;
+}
+
+.years .col:nth-of-type(3) .poll::before {
+  height: 50%;
+}
+
+.years .col:nth-of-type(4) .poll::before {
+  height: 66.67%;
+}
+
+.years .col:last-of-type .poll::before {
+  height: 80%;
+}
+
+.years .poll::after {
+  content: attr(data-number);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  color: #fff;
+  font-weight: 900;
+  font-size: var(--mid-font-sz);
+}
+
+@media (max-width: 374px) {
+  .years {
+    transform: rotate(90deg);
+  }
+
+  .years .poll::after {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+}
+
+/* 6.4. +30 Subjects */
+.diverse-subjs .subjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.diverse-subjs .subjects .subj {
+  position: relative;
+  cursor: pointer;
+}
+
+.diverse-subjs .subjects .subj::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  background-image: linear-gradient(var(--main-gradient));
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width var(--transition-dur);
+}
+
+.diverse-subjs .subjects .subj:hover::before {
+  width: 100%;
+}
+
+.diverse-subjs .subjects .subj::after {
+  content: attr(data-subj);
+  color: #fff;
+  font-family: "momcake";
+  font-size: var(--mid-font-sz);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: left var(--transition-dur) ease-in, opacity var(--transition-dur);
+  transition-delay: 0.1s;
+  z-index: -1;
+}
+
+.diverse-subjs .subjects .subj:hover::after {
+  left: 50%;
+  opacity: 1;
+  z-index: 1;
+}
+
+.diverse-subjs .subjects .subj:nth-child(2) img {
+  width: 100%;
+}
+
+.diverse-subjs .subjects .subj img {
+  height: 190px;
+  object-fit: cover;
+}
+
+/* -------- 6. Stats -------- */
+
+/* -------- 7. Staff -------- */
+
+/* 7.1. Admins */
+.admins {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.admins .admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admins .admin img {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.admins .admin h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.admins .admin span {
+  color: var(--primary-clr);
+}
+
+.admins .admin p {
+  line-height: 1.5;
+  color: var(--txt-clr);
+  font-size: 14px;
+}
+
+.admins .admin .personal-info {
+  flex: 1 0 45%;
+}
+
+@media (max-width: 767px) {
+  .admins .admin {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* 7.2. Performing Students */
+.students {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: var(--section-block-margin);
+  gap: 1rem;
+}
+
+.student {
+  position: relative;
+  cursor: pointer;
+}
+
+.student::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-image var(--transition-dur);
+}
+
+.student:hover::before {
+  background-image: linear-gradient(var(--gradient-primary-clr));
+}
+
+.student .info {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity var(--transition-dur), left var(--transition-dur);
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "momcake", Arial, Helvetica, sans-serif;
+}
+
+.student .info p {
+  margin-bottom: 1.5rem;
+}
+
+.student .info span {
+  color: var(--second-clr);
+}
+
+.student:hover .info {
+  left: 50%;
+  opacity: 1;
+}
+
+.student:nth-of-type(2) img {
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .students {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------- 7. Staff -------- */
+
+/* -------- 8. Activities -------- */
+
+.activs-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.activs-box .activ {
+  border-radius: 12px;
+  box-shadow: 0 0 8px 0 var(--faint-primary-clr);
+}
+
+.activs-box .activ img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+}
+
+.activs-box .activ h4 {
+  text-align: center;
+  font-size: var(--mid-font-sz);
+  margin: 10px 0;
+  color: var(--primary-clr);
+}
+
+.activs-box .activ p {
+  line-height: 1.5;
+  font-size: 14px;
+  color: var(--txt-clr);
+  padding: 14px;
+}
+
+.activs-box .activ button,
+.container form button {
+  border-radius: 10px;
+  padding: 14px;
+  background-color: var(--accent);
+  margin: 0 0 14px 14px;
+}
+
+.activs-box .activ button a {
+  color: #fff;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .activs-box {
+    flex-direction: column;
+  }
+}
+
+/* -------- 8. Activities -------- */
+
+/* -------- 9. Contact -------- */
+
+.contact .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact .container form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 55%;
+}
+
+.contact .container form input,
+textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--primary-clr);
+  transition: border-color var(--transition-dur);
+}
+
+.contact .container form input:focus,
+.contact .container form textarea:focus {
+  border-color: var(--accent);
+}
+
+.contact .container form textarea {
+  resize: none;
+  height: 200px;
+}
+
+.contact .container form button {
+  margin: 0;
+  color: #fff;
+  width: 150px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.contact .container .other-info > * {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact .container .other-info i {
+  margin-right: .5rem;
+  color: var(--primary-clr);
+  font-size: 1.5rem;
+}
+
+.contact .container .other-info p {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 800px) {
+  .contact .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact .container form {
+    width: 100%;
+  }
+
+  .contact .container .other-info > *  {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact .container .other-info i {
+    margin-bottom: .75rem;
+    margin-right: 0;
+  }
+}
+
+/* -------- 9. Contact -------- */
+
+/* -------- 10. Footer -------- */
+
+footer {
+  background-color: var(--primary-clr);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer p {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+footer p span {
+  color: var(--second-clr);
+}
+
+footer a {
+  text-decoration: underline;
+}
+
+footer a[href="unsplash.com"] {
+  color: #fff;
+}
+
+footer a[href="pexels.com"] {
+  color: rgb(0, 255, 76);
+}

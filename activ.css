@@ -1,0 +1,36 @@
+.landing {
+  min-height: 50vh;
+  background-image:linear-gradient(rgb(0 0 0 / 0), var(--faint-primary-clr)), url("../imgs/sports.jpg");
+  background-position: center;
+}
+
+.landing nav {
+  justify-content: center;
+}
+
+.landing .hero {
+  min-height: calc(50vh - 80px);
+}
+
+/* ABOUT THE ACTIVITY */
+.about p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.about h2 {
+  font-size: var(--mid-font-sz);
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.about button {
+  border-radius: 10px;
+  padding: 14px;
+  background-color: var(--accent);
+  color: #fff;
+  margin: 0 auto;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+}

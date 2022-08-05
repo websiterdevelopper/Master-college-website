@@ -1,0 +1,61 @@
+* , *::before, *::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+}
+
+a {
+	text-decoration: none;
+	color: initial;
+	display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: capitalize;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+ul {
+	list-style: none;
+}
+
+button , input, textarea{
+	font-family: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+.center-all {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.container._90 {
+	width: 90%;
+}
+
+.container._85 {
+	width: 85%;
+}
+
+.container._80 {
+	width: 80%;
+}
