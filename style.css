@@ -67,36 +67,36 @@
 /* headings font */
 @font-face {
   font-family: "momcake";
-  src: url("../fonts/momcake/MomcakeBold.otf");
+  src: url("MomcakeBold.otf");
 }
 
 /* regular font */
 @font-face {
   font-family: "inter";
-  src: url("../fonts/inter/Inter-Light.ttf");
+  src: url("Inter-Light.ttf");
   font-weight: 100;
 }
 
 @font-face {
   font-family: "inter";
-  src: url("../fonts/inter/Inter-Regular.ttf");
+  src: url("Inter-Regular.ttf");
 }
 
 @font-face {
   font-family: "inter";
-  src: url("../fonts/inter/Inter-Medium.ttf");
+  src: url("Inter-Medium.ttf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "inter";
-  src: url("../fonts/inter/Inter-Bold.ttf");
+  src: url("Inter-Bold.ttf");
   font-weight: 700;
 }
 
 @font-face {
   font-family: "inter";
-  src: url("../fonts/inter/Inter-Black.ttf");
+  src: url("Inter-Black.ttf");
   font-weight: 900;
 }
 
@@ -169,7 +169,7 @@ section {
 .landing {
   min-height: 100vh;
   background-image: linear-gradient(var(--gradient-primary-clr)),
-    url("../imgs/landing.jpg");
+    url("landing.jpg");
   background-size: cover;
   background-position: center;
 }
